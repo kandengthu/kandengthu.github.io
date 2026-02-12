@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700');
-
+/* Solarized Dark - https://ethanschoonover.com/solarized */
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: lighter;
-    background: white;
+    font-family: "Times New Roman", Times, 宋体, SimSun, "Songti SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", serif;
+    font-weight: 400;
+    background: #002b36;
+    color: #839496;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -16,7 +17,7 @@ body {
 h1,
 h2 {
     text-align: center;
-    font-family: "Quattrocento", Georgia, 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, 宋体, SimSun, "Songti SC", serif;
     margin: 0;
     padding: 0;
 }
@@ -24,14 +25,14 @@ h2 {
 h1 {
     font-size: 30pt;
     margin-bottom: 10px;
+    color: #93a1a1;
 }
 
 h2 {
     font-size: 14pt;
     font-style: italic;
-    font-family: sans-serif;
-    font-weight: lighter;
-    color: #BBB;
+    font-weight: 400;
+    color: #657b83;
 }
 
 .header {
@@ -56,7 +57,8 @@ h2 {
     position: fixed;
     display: block;
     width: 100%;
-    background: white;
+    background: #002b36;
+    color: #586e75;
     margin: 0;
     padding-top: 6px;
     padding-bottom: 6px;
@@ -86,6 +88,7 @@ h2 {
     top: 0;
     left: 0;
     margin-top: 24px;
+    background: #002b36;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -104,7 +107,7 @@ h2 {
     margin: 0 auto;
     padding: 20px;
     padding-top: 4em;
-    background: white;
+    background: #073642;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -114,29 +117,36 @@ h2 {
 }
 
 p {
-    font-size: 13pt;
-    color: #888;
-    line-height: 1.7em;
-    font-weight: lighter;
+    font-size: 16px;
+    color: #839496;
+    line-height: 1.75em;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 980px) {
+    p {
+        font-size: 17px;
+        line-height: 1.8em;
+    }
 }
 
 a {
-    font-weight: 700;
-    color: #b97c2c;
-    font-family: sans-serif;
+    font-weight: 600;
+    color: #268bd2;
+    font-family: inherit;
     text-decoration: none;
 }
 
 .unclickable {
-    font-weight: 700;
-    color: #4f3411;
-    font-family: sans-serif;
+    font-weight: 600;
+    color: #586e75;
+    font-family: inherit;
     text-decoration: none;
     cursor: not-allowed;
 }
 
 a:hover {
-    color: black;
+    color: #2aa198;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -150,7 +160,7 @@ a:hover {
 }
 
 strong {
-    color: black;
+    color: #93a1a1;
     font-weight: bold;
 }
 
@@ -198,7 +208,14 @@ img {
   Class applied to choice links
 */
 .choice a, .choice span {
-    font-size: 15pt;
+    font-size: 16px;
+    color: #839496;
+}
+
+@media screen and (max-width: 980px) {
+    .choice a, .choice span {
+        font-size: 17px;
+    }
 }
 
 /* 
@@ -208,7 +225,7 @@ img {
 .end {
     text-align: center;
     font-weight: bold;
-    color: black;
+    color: #93a1a1;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -222,7 +239,8 @@ img {
     right: 14px;
     top: 4px;
     user-select: none;
-    background: white;
+    background: #002b36;
+    color: #586e75;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -232,7 +250,7 @@ img {
 }
 
 #controls [disabled] {
-    color: #ccc;
+    color: #073642;
 }
 
 #controls>*:not(:last-child):after {
@@ -250,37 +268,50 @@ img {
 }
 
 /* 
-  Dark Theme (Added in Inky 0.10.0)
+  Theme toggle: Solarized Light (lighter alternative)
     # theme: dark
 */
 
 body.dark {
-    background: black;
-    color: white;
+    background: #fdf6e3;
+    color: #657b83;
+}
+
+.dark p {
+    color: #657b83;
+}
+
+.dark .choice a, .dark .choice span {
+    color: #586e75;
+}
+
+.dark h1 {
+    color: #586e75;
 }
 
 .dark h2 {
-    color: #666;
+    color: #657b83;
 }
 
 .dark .container {
-    background: black;
+    background: #eee8d5;
 }
 
 .dark .written-in-ink {
-    background: black;
+    background: #fdf6e3;
+    color: #657b83;
 }
 
 .dark a {
-    color: #cc8f1a;
+    color: #268bd2;
 }
 .dark .unclickable{
-    color: #c4af87;
+    color: #586e75;
     cursor:not-allowed;
 }
 
 .dark a:hover {
-    color: white;
+    color: #2aa198;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -290,17 +321,18 @@ body.dark {
 }
 
 .dark strong {
-    color: white;
+    color: #586e75;
 }
 
 .dark #controls [disabled] {
-    color: #444;
+    color: #93a1a1;
 }
 
 .dark .end {
-    color: white;
+    color: #586e75;
 }
 
 .dark #controls {
-    background: black;
+    background: #fdf6e3;
+    color: #657b83;
 }
