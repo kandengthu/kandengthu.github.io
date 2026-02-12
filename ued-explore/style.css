@@ -1,38 +1,75 @@
-/* Solarized Dark - https://ethanschoonover.com/solarized */
-body {
-    font-family: "Times New Roman", Times, 宋体, SimSun, "Songti SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", serif;
-    font-weight: 400;
-    background: #002b36;
-    color: #839496;
-    overflow: hidden;
+/* Typora Newsprint 主题 - 完全一致 */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --bg-color: #f3f2ee;
+    --text-color: #1f0909;
+    --control-text-color: #444;
+}
+
+html {
+    font-size: 18px;
     -webkit-font-smoothing: antialiased;
 }
 
-@media screen and (prefers-reduced-motion: no-preference) {
-    body.switched {
-        transition: color 0.6s, background-color 0.6s;
+html, body {
+    background-color: #f3f2ee;
+    font-family: "PT Serif", 'Times New Roman', 'SF Pro', Times, 'Songti SC', 宋体, SimSun, serif;
+    color: #1f0909;
+    line-height: 1.5em;
+    overflow: hidden;
+}
+
+/* 主内容区 - 对应 #write */
+.container,
+#story {
+    max-width: 40em;
+    margin: 0 auto;
+    padding: 30px;
+    padding-top: 4em;
+    padding-bottom: 100px;
+    background-color: #f3f2ee;
+}
+
+@media only screen and (min-width: 1400px) {
+    .container, #story {
+        max-width: 914px;
     }
 }
 
-h1,
-h2 {
-    text-align: center;
-    font-family: "Times New Roman", Times, 宋体, SimSun, "Songti SC", serif;
-    margin: 0;
-    padding: 0;
+/* 标题 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "PT Serif", 'Times New Roman', Times, serif;
+    font-weight: bold;
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
 }
 
 h1 {
-    font-size: 30pt;
-    margin-bottom: 10px;
-    color: #93a1a1;
+    font-size: 1.875em;
+    line-height: 1.3em;
+    font-weight: normal;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #c5c5c5;
+    padding-bottom: 0.8125em;
+}
+
+h2, h3 {
+    font-size: 1.3125em;
+    line-height: 1.15;
+    margin-top: 2.285714em;
+    margin-bottom: 0.75em;
+}
+
+h3 {
+    font-weight: normal;
 }
 
 h2 {
-    font-size: 14pt;
-    font-style: italic;
-    font-weight: 400;
-    color: #657b83;
+    text-align: center;
 }
 
 .header {
@@ -40,25 +77,74 @@ h2 {
     padding-bottom: 3em;
 }
 
-/*
-  Built-in class:
-    # author: Name
-*/
 .byline {
     font-style: italic;
 }
 
+/* 正文 */
+p {
+    margin: 0.8em 0;
+    margin-bottom: 1.5em;
+    font-size: 1.1em;
+    color: #1f0909;
+    line-height: 1.6em;
+}
+
+/* 链接 */
+a {
+    text-decoration: none;
+    color: #065588;
+    font-family: inherit;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+}
+
+.unclickable {
+    color: #444;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+strong {
+    color: #1f0909;
+    font-weight: bold;
+}
+
+/* 选项 */
+.choice {
+    text-align: center;
+    line-height: 1.7em;
+    margin-bottom: 1.5em;
+}
+
+:not(.choice)+.choice {
+    padding-top: 1em;
+}
+
+.choice a, .choice span {
+    font-size: 1.1em;
+    color: #065588;
+}
+
+.choice span.unclickable {
+    color: #444;
+}
+
+/* 顶部栏 */
 .written-in-ink {
     z-index: 3;
     font-size: 9pt;
-    font-family: sans-serif;
+    font-family: "PT Serif", 'Times New Roman', Times, serif;
     text-align: center;
     font-weight: 700;
     position: fixed;
     display: block;
     width: 100%;
-    background: #002b36;
-    color: #586e75;
+    background: #f3f2ee;
+    color: #1f0909;
     margin: 0;
     padding-top: 6px;
     padding-bottom: 6px;
@@ -66,191 +152,31 @@ h2 {
     top: 0;
 }
 
-@media screen and (prefers-reduced-motion: no-preference) {
-    .written-in-ink {
-        transition: color 0.6s, background 0.6s;
-    }
+.written-in-ink a {
+    color: #065588;
 }
 
-/* 
-  Enables <iframe> support work on itch.io when using mobile iOS
-*/
-.outerContainer {
-    position: absolute;
-    display: block;
-    margin: 0;
-    padding: 0;
-    -webkit-overflow-scrolling: touch;
-    overflow: scroll;
-    overflow-x: hidden;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    margin-top: 24px;
-    background: #002b36;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 980px) {
-    .outerContainer {
-        margin-top: 44px;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-}
-
-.container {
-    display: block;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    padding-top: 4em;
-    background: #073642;
-}
-
-@media screen and (prefers-reduced-motion: no-preference) {
-    .switched .container {
-        transition: background-color 0.6s;
-    }
-}
-
-p {
-    font-size: 16px;
-    color: #839496;
-    line-height: 1.75em;
-    font-weight: 400;
-}
-
-@media screen and (max-width: 980px) {
-    p {
-        font-size: 17px;
-        line-height: 1.8em;
-    }
-}
-
-a {
-    font-weight: 600;
-    color: #268bd2;
-    font-family: inherit;
-    text-decoration: none;
-}
-
-.unclickable {
-    font-weight: 600;
-    color: #586e75;
-    font-family: inherit;
-    text-decoration: none;
-    cursor: not-allowed;
-}
-
-a:hover {
-    color: #2aa198;
-}
-
-@media screen and (prefers-reduced-motion: no-preference) {
-    a {
-        transition: color 0.6s;
-    }
-
-    a:hover {
-        transition: color 0.1s;
-    }
-}
-
-strong {
-    color: #93a1a1;
-    font-weight: bold;
-}
-
-img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-}
-
-.container .hide {
-    opacity: 0.0;
-}
-
-.container .invisible {
-    display: none;
-}
-
-.container>* {
-    opacity: 1.0;
-}
-
-@media screen and (prefers-reduced-motion: no-preference) {
-    .container>* {
-        transition: opacity 1.0s;
-    }
-}
-
-/*
-  Class applied to all choices
-  (Will always appear inside <p> element by default.)
-*/
-.choice {
-    text-align: center;
-    line-height: 1.7em;
-}
-
-/* 
-  Class applied to first choice
-*/
-:not(.choice)+.choice {
-    padding-top: 1em;
-}
-
-/*
-  Class applied to choice links
-*/
-.choice a, .choice span {
-    font-size: 16px;
-    color: #839496;
-}
-
-@media screen and (max-width: 980px) {
-    .choice a, .choice span {
-        font-size: 17px;
-    }
-}
-
-/* 
-  Built-in class:
-    The End # CLASS: end
-*/
-.end {
-    text-align: center;
-    font-weight: bold;
-    color: #93a1a1;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
+/* 控制栏 */
 #controls {
     z-index: 4;
     font-size: 9pt;
+    font-family: "PT Serif", 'Times New Roman', Times, serif;
     text-align: center;
     padding-bottom: 6px;
     position: fixed;
     right: 14px;
     top: 4px;
     user-select: none;
-    background: #002b36;
-    color: #586e75;
+    background: #f3f2ee;
+    color: #1f0909;
 }
 
-@media screen and (prefers-reduced-motion: no-preference) {
-    #controls {
-        transition: color 0.6s, background 0.6s;
-    }
+#controls a {
+    color: #065588;
 }
 
 #controls [disabled] {
-    color: #073642;
+    color: #999;
 }
 
 #controls>*:not(:last-child):after {
@@ -267,72 +193,103 @@ img {
     }
 }
 
-/* 
-  Theme toggle: Solarized Light (lighter alternative)
-    # theme: dark
-*/
-
-body.dark {
-    background: #fdf6e3;
-    color: #657b83;
+/* 滚动容器 */
+.outerContainer {
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin-top: 24px;
+    background: #f3f2ee;
 }
 
-.dark p {
-    color: #657b83;
-}
-
-.dark .choice a, .dark .choice span {
-    color: #586e75;
-}
-
-.dark h1 {
-    color: #586e75;
-}
-
-.dark h2 {
-    color: #657b83;
-}
-
-.dark .container {
-    background: #eee8d5;
-}
-
-.dark .written-in-ink {
-    background: #fdf6e3;
-    color: #657b83;
-}
-
-.dark a {
-    color: #268bd2;
-}
-.dark .unclickable{
-    color: #586e75;
-    cursor:not-allowed;
-}
-
-.dark a:hover {
-    color: #2aa198;
-}
-
-@media screen and (prefers-reduced-motion: no-preference) {
-    .dark a {
-        transition: color 0.6s;
+@media screen and (max-width: 980px) {
+    .outerContainer {
+        margin-top: 44px;
     }
 }
 
-.dark strong {
-    color: #586e75;
+/* 动画 */
+@media screen and (prefers-reduced-motion: no-preference) {
+    body.switched {
+        transition: color 0.6s, background-color 0.6s;
+    }
+    .written-in-ink, #controls {
+        transition: color 0.6s, background 0.6s;
+    }
+    .switched .container {
+        transition: background-color 0.6s;
+    }
+    .container>* {
+        transition: opacity 1.0s;
+    }
 }
 
-.dark #controls [disabled] {
-    color: #93a1a1;
+.container .hide { opacity: 0; }
+.container .invisible { display: none; }
+.container>* { opacity: 1; }
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/* The End */
+.end {
+    text-align: center;
+    font-weight: bold;
+    color: #1f0909;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* 移动端 */
+@media screen and (max-width: 980px) {
+    html { font-size: 19px; }
+    p { font-size: 1.05em; }
+    .choice a, .choice span { font-size: 1.05em; }
+}
+
+/* 深色模式 - 保留 theme 切换 */
+body.dark {
+    background: #2d2d2d;
+    color: #e8e8e8;
+}
+
+.dark .container, .dark #story {
+    background: #2d2d2d;
+}
+
+.dark p, .dark .choice a, .dark .choice span {
+    color: #e8e8e8;
+}
+
+.dark h1, .dark h2 {
+    color: #e8e8e8;
+    border-color: #555;
+}
+
+.dark a {
+    color: #6ab0de;
+}
+
+.dark .unclickable {
+    color: #aaa;
+}
+
+.dark .written-in-ink, .dark #controls {
+    background: #2d2d2d;
+    color: #e8e8e8;
 }
 
 .dark .end {
-    color: #586e75;
-}
-
-.dark #controls {
-    background: #fdf6e3;
-    color: #657b83;
+    color: #e8e8e8;
 }
